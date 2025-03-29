@@ -15,6 +15,12 @@ function App() {
 
   return (
     <div className="bg-black text-white font-sans">
+      {/* Visual Hero Image */}
+      <div
+        className="w-full h-[50vh] md:h-[65vh] bg-top bg-no-repeat bg-contain"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      ></div>
+
       {/* Navigation */}
       <nav className="bg-black/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
