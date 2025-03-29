@@ -27,8 +27,6 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      
       {/* Intro + Discord + News Grid */}
       <section className="py-20 bg-black/90">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 items-start">
@@ -62,7 +60,8 @@ function App() {
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-black/80 text-center text-sm text-gray-500 py-6">
