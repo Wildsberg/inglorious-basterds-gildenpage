@@ -32,6 +32,9 @@ function App() {
         <div className="bg-black/70 p-8 rounded max-w-2xl">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Inglorious Basterds</h1>
           <p className="text-lg md:text-xl">{t('intro')}</p>
+          <a href="#news" className="mt-6 inline-block bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-full text-sm tracking-wide shadow transition">
+            ↓ Zu den News
+          </a>
         </div>
       </section>
 
@@ -52,6 +55,9 @@ function App() {
               {t('joinDiscord')}
             </a>
           </div>
+          <a href="#news" className="mt-6 inline-block bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-full text-sm tracking-wide shadow transition">
+            ↓ Zu den News
+          </a>
         </div>
       </section>
 
@@ -72,6 +78,9 @@ function App() {
               </div>
             ))}
           </div>
+          <a href="#news" className="mt-6 inline-block bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-full text-sm tracking-wide shadow transition">
+            ↓ Zu den News
+          </a>
         </div>
       </section>
 
