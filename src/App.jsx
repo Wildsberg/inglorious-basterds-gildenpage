@@ -28,7 +28,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="bg-cover bg-center text-center min-h-[60vh] flex items-center justify-center px-4" style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <section id="home" className="bg-cover bg-center text-center min-h-[60vh] flex items-start justify-center pt-24 px-4" style={{ backgroundImage: `url(${backgroundImage})` }}>
         <div className="bg-black/70 p-6 md:p-12 rounded max-w-3xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Inglorious Basterds</h1>
           <p className="text-lg md:text-xl">{t('intro')}</p>
