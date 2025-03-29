@@ -29,10 +29,9 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="bg-contain bg-no-repeat bg-top text-center min-h-[60vh] md:min-h-[75vh] flex items-center justify-center px-4" style={{ backgroundImage: `url(${backgroundImage})` }}>
-        <div className="bg-black/70 p-6 md:p-12 rounded max-w-3xl mx-auto mt-40">
+        
                     
-        </div>
-      </section>
+        </section>
 
       {/* Intro + Discord + News Grid */}
       <section className="py-20 bg-black/90">
@@ -67,8 +66,7 @@ function App() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* Footer */}
       <footer className="bg-black/80 text-center text-sm text-gray-500 py-6">
