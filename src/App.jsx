@@ -29,7 +29,7 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="bg-contain bg-no-repeat bg-top text-center min-h-[60vh] md:min-h-[75vh] flex items-center justify-center px-4" style={{ backgroundImage: `url(${backgroundImage})` }}>
-        <div className="bg-black/70 p-6 md:p-12 rounded max-w-3xl mx-auto">
+        <div className="bg-black/70 p-6 md:p-12 rounded max-w-3xl mx-auto mt-40">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Inglorious Basterds</h1>
           <p className="text-lg md:text-xl">{t('intro')}</p>
         </div>
