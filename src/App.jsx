@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import backgroundImage from './assets/mockup.jpg'
 import { useEffect, useState } from 'react'
+import backgroundImage from './assets/mockup.jpg'
 
 function App() {
   const { t, i18n } = useTranslation()
@@ -14,45 +14,77 @@ function App() {
   }, [])
 
   return (
-    <div
-      className="min-h-screen bg-cover bg-center text-white"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      <div className="bg-black/70 min-h-screen flex flex-col justify-center items-center text-center px-4 pb-20">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">Inglorious Basterds</h1>
-        <p className="max-w-2xl text-xl md:text-2xl mb-6">{t('intro')}</p>
-        <a
-          href="https://discord.gg/vhbFQEEDgQ"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-red-700 hover:bg-red-600 px-8 py-4 rounded-full text-lg font-semibold shadow-lg transition"
-        >
-          {t('joinDiscord')}
-        </a>
+    <div className="bg-black text-white font-sans">
+      {/* Navigation */}
+      <nav className="bg-black/80 backdrop-blur-md sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="text-2xl font-bold">Inglorious Basterds</div>
+          <div className="space-x-6 text-sm md:text-base">
+            <a href="#home" className="hover:text-red-400">Home</a>
+            <a href="#news" className="hover:text-red-400">News</a>
+            <a href="https://discord.gg/vhbFQEEDgQ" target="_blank" className="hover:text-red-400">Discord</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="home" className="h-screen bg-cover bg-center flex items-center justify-center text-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
+        <div className="bg-black/70 p-8 rounded max-w-2xl">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Inglorious Basterds</h1>
+          <p className="text-lg md:text-xl">{t('intro')}</p>
+        </div>
+      </section>
+
+      {/* Intro + CTA */}
+      <section className="py-20 bg-black/90">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Willkommen!</h2>
+            <p className="text-lg">{t('intro')}</p>
+          </div>
+          <div className="text-center">
+            <a
+              href="https://discord.gg/vhbFQEEDgQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-red-700 hover:bg-red-600 px-8 py-4 rounded-full text-lg font-semibold shadow-lg transition"
+            >
+              {t('joinDiscord')}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* News Section */}
+      <section id="news" className="py-20 bg-black">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-6 text-center">PoE2 News</h2>
+          <div className="grid gap-6">
+            {news.length === 0 && (
+              <p className="text-center text-gray-400">News werden geladen…</p>
+            )}
+            {news.map((item, index) => (
+              <div key={index} className="border border-gray-700 rounded p-4 hover:bg-gray-800 transition">
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
+                  <p className="text-sm text-gray-400">{new Date(item.pubDate).toLocaleDateString()}</p>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black/80 text-center text-sm text-gray-500 py-6">
         <button
           onClick={() => i18n.changeLanguage(i18n.language === 'de' ? 'en' : 'de')}
-          className="mt-8 text-sm underline hover:text-gray-300"
+          className="underline hover:text-white mb-2 block"
         >
           {t('changeLanguage')}
         </button>
-      </div>
-
-      <div className="bg-black/90 px-6 py-10">
-        <h2 className="text-3xl font-bold mb-6 text-center">PoE2 News</h2>
-        <div className="max-w-4xl mx-auto grid gap-6">
-          {news.length === 0 && (
-            <p className="text-center text-gray-400">News werden geladen…</p>
-          )}
-          {news.map((item, index) => (
-            <div key={index} className="border border-gray-700 rounded p-4 hover:bg-gray-800 transition">
-              <a href={item.link} target="_blank" rel="noopener noreferrer">
-                <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
-                <p className="text-sm text-gray-400">{new Date(item.pubDate).toLocaleDateString()}</p>
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
+        <p>Fanprojekt zu Path of Exile 2 – Inhalte © Grinding Gear Games</p>
+      </footer>
     </div>
   )
 }
