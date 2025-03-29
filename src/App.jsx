@@ -28,24 +28,19 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="h-screen bg-cover bg-center flex items-center justify-center text-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
-        <div className="bg-black/70 p-8 rounded max-w-2xl">
+      <section id="home" className="bg-cover bg-center py-24 px-4 text-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
+        <div className="bg-black/70 p-6 md:p-12 rounded max-w-3xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Inglorious Basterds</h1>
           <p className="text-lg md:text-xl">{t('intro')}</p>
-          <a href="#news" className="mt-6 inline-block bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-full text-sm tracking-wide shadow transition">
-            ↓ Zu den News
-          </a>
         </div>
       </section>
 
-      {/* Intro + CTA */}
+      {/* Intro + Discord + News Grid */}
       <section className="py-20 bg-black/90">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 items-start">
           <div>
             <h2 className="text-3xl font-bold mb-4">Willkommen!</h2>
-            <p className="text-lg">{t('intro')}</p>
-          </div>
-          <div className="text-center">
+            <p className="text-lg mb-6">{t('intro')}</p>
             <a
               href="https://discord.gg/vhbFQEEDgQ"
               target="_blank"
@@ -55,32 +50,24 @@ function App() {
               {t('joinDiscord')}
             </a>
           </div>
-          <a href="#news" className="mt-6 inline-block bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-full text-sm tracking-wide shadow transition">
-            ↓ Zu den News
-          </a>
-        </div>
-      </section>
 
-      {/* News Section */}
-      <section id="news" className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-6 text-center">PoE2 News</h2>
-          <div className="grid gap-6">
-            {news.length === 0 && (
-              <p className="text-center text-gray-400">News werden geladen…</p>
-            )}
-            {news.map((item, index) => (
-              <div key={index} className="border border-gray-700 rounded p-4 hover:bg-gray-800 transition">
-                <a href={item.link} target="_blank" rel="noopener noreferrer">
-                  <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
-                  <p className="text-sm text-gray-400">{new Date(item.pubDate).toLocaleDateString()}</p>
-                </a>
-              </div>
-            ))}
+          {/* News Section */}
+          <div id="news">
+            <h2 className="text-3xl font-bold mb-6">PoE2 News</h2>
+            <div className="grid gap-6">
+              {news.length === 0 && (
+                <p className="text-gray-400">News werden geladen…</p>
+              )}
+              {news.map((item, index) => (
+                <div key={index} className="border border-gray-700 rounded p-4 hover:bg-gray-800 transition">
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
+                    <p className="text-sm text-gray-400">{new Date(item.pubDate).toLocaleDateString()}</p>
+                  </a>
+                </div>
+              ))}
+            </div>
           </div>
-          <a href="#news" className="mt-6 inline-block bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-full text-sm tracking-wide shadow transition">
-            ↓ Zu den News
-          </a>
         </div>
       </section>
 
