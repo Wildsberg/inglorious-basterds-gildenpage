@@ -28,11 +28,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="bg-contain bg-no-repeat bg-top text-center min-h-[60vh] md:min-h-[75vh] flex items-center justify-center px-4" style={{ backgroundImage: `url(${backgroundImage})` }}>
-        
-                    
-        </section>
-
+      
       {/* Intro + Discord + News Grid */}
       <section className="py-20 bg-black/90">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 items-start">
